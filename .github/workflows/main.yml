@@ -22,7 +22,7 @@ jobs:
       - run: pwd
       - run: node -v
       - run: npm -v
-      - run: shownode.js
+      - run: node shownode.js
 
       # Use the output from the `hello` step
       - name: Get the output time
