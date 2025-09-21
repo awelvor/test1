@@ -23,7 +23,9 @@ jobs:
       - run: node -v
       - run: npm -v
       - run: node shownode.js
-      - run: node server.js
+      - run: npm install http
+      - run: npm install path
+      - run: node index.js
 
       # Use the output from the `hello` step
       - name: Get the output time
