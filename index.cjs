@@ -1,32 +1,20 @@
+// Import the HTTP module
 const http = require('http');
-const path = require('path');
 
-// Importing custom modules
-
-const Logger = require('./logger');
-
-// Create a logger instance
-const logger = new Logger('App');
-
-// Create server
+// Create a server object
 const server = http.createServer((req, res) => {
-  try {
-    logger.log(`Request received for ${req.url}`);
+  // Set the response HTTP header with HTTP status and Content type
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
 
-    res.writeHead(200, { 'Content-Type': 'text/html' });
-    res.write(`<h1>Welcome to our app!</h1>`);
-    
-    res.write(`<p>Formatted amount: ${formatCurrency(99.99)}</p>`);
-    res.end();
-  } catch (error) {
-    logger.error(error);
-    res.writeHead(500, { 'Content-Type': 'text/plain' });
-    res.end('Internal Server Error');
-  }
+  // Send the response body as 'Hello, World!'
+  res.end('Hello, World!\n');
 });
 
-// Start server
-const PORT = process.env.PORT || 3000;
-server.listen(PORT, () => {
-  logger.log(`Server running at http://localhost:${PORT}`);
+// Define the port to listen on const PORT = 3000;
+
+// Start the server and listen on the specified port
+server.listen(PORT, 'localhost', () => {
+  console.log(`Server running at http://localhost:${PORT}/`);
 });
+
+              
