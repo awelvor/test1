@@ -23,6 +23,7 @@ jobs:
       - run: node -v
       - run: npm -v
       - run: node shownode.js
+      - run: node server.js
 
       # Use the output from the `hello` step
       - name: Get the output time
