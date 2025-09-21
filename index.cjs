@@ -2,7 +2,7 @@ const http = require('http');
 const path = require('path');
 
 // Importing custom modules
-const { getCurrentDate, formatCurrency } = require('./utils');
+
 const Logger = require('./logger');
 
 // Create a logger instance
@@ -15,7 +15,7 @@ const server = http.createServer((req, res) => {
 
     res.writeHead(200, { 'Content-Type': 'text/html' });
     res.write(`<h1>Welcome to our app!</h1>`);
-    res.write(`<p>Current date: ${getCurrentDate()}</p>`);
+    
     res.write(`<p>Formatted amount: ${formatCurrency(99.99)}</p>`);
     res.end();
   } catch (error) {
