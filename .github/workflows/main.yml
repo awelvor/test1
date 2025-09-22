@@ -25,6 +25,8 @@ jobs:
       - run: node shownode.js
       - run: npm install http
       - run: npm install path
+      - run: npm install mysql2
+      - run: node mysql.cjs
    
 
       # Use the output from the `hello` step
