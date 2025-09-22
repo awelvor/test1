@@ -27,7 +27,7 @@ jobs:
       - run: npm install path
       - run: npm install mysql2
       - run: sudo systemctl start mysql
-      - run: sudo mysql
+      - run: node query1.cjs
    
 
       # Use the output from the `hello` step
