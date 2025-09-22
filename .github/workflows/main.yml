@@ -26,6 +26,7 @@ jobs:
       - run: npm install http
       - run: npm install path
       - run: npm install mysql2
+      - run: systemctl start mysql
       - run: node mysql.cjs
    
 
